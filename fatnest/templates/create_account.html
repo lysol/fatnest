@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Create an Account{% endblock %}
+
+{% block content %}
+<div class="forms-container">   
+
+    {% if not session['user'] %}
+		</a><h2>Create an account</h2>
+    <form action="{{ url_for('register') }}" method="POST">
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <div class="input-row">
+            <div class="input"><label for="email">Email</label></div>
+            <div class="input"><input name="email" /></div>
+        </div>
+
+        <div class="input-row">
+            <div class="input">&nbsp;</div>
+						<div class="input" style="width: 16em"><small>Your password will be generated<br />and emailed to you.</small></div>
+        </div>
+
+        <div class="input-row">
+            <div class="input">&nbsp;</div>
+            <div class="input"><button id="register-button">Register</button></div>
+        </div>
+    </form>
+    {% else %}
+        <div class="full-inner">
+            You're already logged in as {{ session['user']['email'] }}.
+        </div> 
+    {% endif %}
+</div>
+{% endblock %}

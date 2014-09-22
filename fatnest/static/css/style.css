@@ -1,0 +1,348 @@
+body {
+		font-size: 12pt;
+		font-family: "istok web", helvetica, arial, sans-serif;
+		padding: 0;
+		margin: 0;
+		padding-top: 0;
+		color: #000000;
+		background-position-x: -50px;
+		background-position-y: 200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+		font-family: "Sofia", serif;
+		font-weight: normal;
+}
+
+.twitter-link {
+		font-family: "Istok Web", helvetica, arial, sans-serif;
+}
+
+.flashes-container {
+		text-align: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+}		
+
+.flash  {
+		margin: 1em auto;
+		font-weight: bold;
+}
+
+.success {
+		color: #008800;
+}
+
+.error {
+		color: #880000;
+}
+
+a, a:active, a:hover, a:focus, a:visited {
+		color: #8A8A8A;
+		font-weight: bold;
+}
+
+#content {
+		padding: 2em;
+		padding-top: 0;
+		color: #000000;
+		position: relative;
+		margin: 2em;
+		width: 40em;
+		margin-left: auto;
+		margin-right: auto;
+}
+
+.wider {
+		position: relative;
+		width: 60em !important;
+}
+
+.narrower {
+		width: 25em !important;
+}
+
+.input-row {
+		clear: both;
+		margin-bottom: 2.25em;
+}
+
+.input {
+		float: left;
+		width: 9em; 
+		margin-bottom: 1em;
+}
+
+form {
+		margin-bottom: 8em;
+		clear: both;
+}
+
+.input input {
+		border-radius: 4px;
+		border: 1px solid #CCCCCC;
+	  padding: 2px;
+		font-size: 11pt;
+		padding: 4px;
+		width: 14em;
+}
+
+.login-info {
+		font-size: 75%;
+		text-align: right;
+		padding-top: 1em;
+		padding-right: 0;
+		margin-bottom: 4em;
+		margin-right: -2.75em;
+		position: absolute;
+		right: 0;
+		top: 0;
+}		
+
+.login-info a {
+}
+
+.header-top {
+		padding: 2em;
+		margin: 0;
+		margin-left: 2em;
+		margin-right: 0;
+		text-align: right;
+		padding-bottom: 1em;
+		margin-top: 2em;
+}
+
+.header-clear {
+		border-bottom: 1px dashed #ECECEC;
+		clear: both;
+}
+
+.header-left {
+		width: 20%;
+		text-align: left;
+		float: left;
+		margin-top: -2.0em;
+}
+
+.header-right {
+		width: 80%;
+		text-align: right;
+		font-size: 10pt;
+		padding-right: 0;
+		margin-right: 0;
+		height: 5.188em;
+		display: inline;
+}
+
+.header-left h1 {
+		padding: 0;
+		margin: 0;
+		font-size: 40pt;
+}
+
+.header-left a {
+		text-decoration: none;
+		color: #000000;
+}
+
+
+.twitter-account-list {
+		list-style: none;
+}
+
+.twitter-row {
+		border-radius: 3px;
+		padding: 12px;
+		margin-left: 0;
+
+		background: #EFEFEF; /* Old browsers */
+		margin-bottom: 1em;
+}
+
+.delegate-list-container {
+		margin-top: 8em;
+}
+
+.delegate-list {
+		list-style: none;
+}
+.delegate-row {
+		padding: 12px;
+		margin-left: 0;
+}
+
+form {
+		clear: none;
+}
+
+#tweet {
+		width: 23.7em;
+		height: 5.4em;
+		border-radius: 6px;
+		border: 1px #DDD solid;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+		font-family: Georgia,Palatino,serif;
+		line-height: 22px;
+		font-size: 16px;
+		padding: 12px;
+}
+
+
+footer {
+		position: relative;
+		margin-top: 4em;
+		clear: both;
+		font-size: 9pt;
+		text-align: right;
+		top: 0;
+}
+
+fieldset {
+		border: 0;
+		padding: 0;
+		margin: 0;
+}
+
+.button-link, .button-link:active, .button-link:hover, .button-link:visited, .button-link:focus, button { 
+		border: 1px solid #CCC;
+		text-decoration: none;
+		color: #444;
+		padding: 8px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		border-radius: 3px;
+		background: #f1f4f7; /* Old browsers */
+		/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YxZjRmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlN2VjZjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		background: -moz-linear-gradient(top,  #f1f4f7 0%, #e7ecf3 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f4f7), color-stop(100%,#e7ecf3)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #f1f4f7 0%,#e7ecf3 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #f1f4f7 0%,#e7ecf3 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #f1f4f7 0%,#e7ecf3 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #f1f4f7 0%,#e7ecf3 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f4f7', endColorstr='#e7ecf3',GradientType=0 ); /* IE6-8 */
+		font-weight: normal;
+		font-size: 10pt;
+		margin-right: 0.5em;
+		font-family: "Istok Web", helvetica, arial, sans-serif;
+
+}
+
+.button-link:hover, button:hover {
+		border-color: #000000;
+		background: none;
+		background-color: #CCC;
+		text-shadow: 0;
+}
+
+#send-tweet {
+		position: absolute;
+		right: 1.47em;
+}
+
+.left-tweet {
+		position: relative !important;
+		top: -2em !important;
+		left: 26.4em !important;
+}
+
+.twitter-tweet-rendered {
+		clear: none !important;
+}
+
+#twitter-username {
+		vertical-align: 4px;
+		margin-left: 0.25em;
+		font-size: 10pt;
+}
+
+#tweet-length {
+		margin-top: 0.25em;
+		font-size: 15pt;
+		color: #CCCCCC;
+}
+
+#twitter-username-link {
+		margin-right: 1em;
+}
+
+.add-twitter-account {
+		vertical-align: 4px;
+		margin-left: 0.5em;
+}
+
+.twitter-delegate-form {
+		margin-bottom: 6em;
+}
+
+.moderated-tweet {
+		margin: 1em;
+		padding: 2em;
+		background-color: #FFF;
+		border-radius: 4px;
+}
+
+#moderation-queue {
+		margin-left: 2.8em;
+		margin-top: 2em;
+		margin-bottom: 2em;
+}
+
+#left-logo {
+		width: 13em;
+		height: 9.55em;
+}
+
+#learn-image {
+		width: 12em;
+}
+
+.more-action-less-tears, .more-action-less-tears:visited {
+		font-size: 20pt;
+		text-decoration: none;
+		color: #5AD;
+}
+
+.delegate-section {
+		margin-top: 4em;
+}
+
+#tweet-form {
+		clear: left;
+		margin-bottom: 4em;
+}
+
+.tweet {
+		margin-bottom: 1em;
+}
+
+.left-form {
+		width: 25em;
+		position: absolute;
+		top: -1em;
+		left: 3em;
+}
+
+#recent-tweets {
+		width: 30em;
+		margin-left: 30em;
+}
+
+.tweet-form-header {
+		margin-bottom: 16px;
+}
+
+#twitter-account {
+		font-family: "istok web", helvetica, arial, sans-serif !important;
+		font-size: 12pt;
+}
+
+#tweeting-container {
+		position: relative;
+}
+
+#anon-moderated-form {
+	margin-top: 1em;
+}

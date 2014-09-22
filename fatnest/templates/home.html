@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block contentclass %}{% if session.user is defined %}wider{% endif %}{% endblock %}
+{% block content %}
+    {% if session.user is defined %}
+        {% if session.user.delegated_twitter_accounts|length > 0 %}
+						{% if session.user.moderation_needed %}
+						<div id="moderation-queue">
+								<h2>Moderation Queue:</h2>
+								{% for tweet in session.user.moderation_queue %}
+										<div class="moderated-tweet">
+												From <strong>{% if not tweet.user_id %}Anonymous{% else %}{{ tweet.author.email }}{% endif %}</strong>: {{ tweet.tweet }}
+												<button data-tweet="{{ tweet.id }}" class="reject-tweet">Reject</button>
+												<button data-tweet="{{ tweet.id }}" class="approve-tweet">Approve</button>
+										</div>
+								{% endfor %}
+						</div>
+				{% endif %}
+				<div id="tweeting-container">
+				{% with tweets = session.user.recent_tweets %}
+				<form id="tweet-form"{% if tweets|length > 0 %}class="left-form"{% endif %}>
+            <fieldset>
+                <h2 class="tweet-form-header">Tweet as <select id="twitter-account">
+                    {% for twitter_account in session.user.delegated_twitter_accounts %}
+                        <option value="{{ twitter_account.id }}">{{ twitter_account.username }}</option>
+                    {% endfor %}
+                </select></h2>
+
+                <textarea placeholder="Enter your tweet here." name="tweet" id="tweet"></textarea>
+                <div id="tweet-length">140</div>
+                <button id="send-tweet" class="left-tweet">Tweet</button>
+            </fieldset>
+        </form>
+
+				{% if tweets|length > 0 %}
+				<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+				<div id="recent-tweets">
+						<h2>Recent Tweets</h2>
+						<div id="tweet-spinner">...</div>
+						<div id="recent-tweets-inner">
+						{% for tweet in tweets %}
+							{% if tweet.twitter_tweet_id and tweet.embedded %}
+							<div id="tweet-{{ tweet.id }}" class="tweet" data-tweet="{{ tweet.id }}">
+							</div>
+							{% endif %}
+						{% endfor %}
+						</div>
+				</div>
+				<div style="clear: both; height: 2em;">&nbsp;</div>
+				{% endif %}
+				{% endwith %}
+				</div>
+
+        {% else %}
+        <p>To get started, click <a href="{{ url_for('twitter_accounts') }}">Manage Twitter Accounts</a><br /> or have someone delegate theirs to you.</p>
+        {% endif %}
+    {% else %}
+        <h1>Hello!</h1>
+				<p>
+						Give folks a way to tweet without giving them control of your account.<br />
+						Using Fatnest you can assign users the ability to tweet, but not access
+						to the password.
+				</p>
+				<p>
+						<a class="more-action-less-tears" href="{{ url_for('create_account') }}">Join now.</a>
+				</p>
+    {% endif %}
+{% endblock %}

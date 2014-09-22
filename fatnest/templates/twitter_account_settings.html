@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+		<h2 class="twitter-accounts"><a class="twitter-link" href="http://twitter.com/{{ twitter_account.username }}">@{{ twitter_account.username }}</a></h2>
+
+		<div>
+				This account can accept moderated submissions at:<br /> 
+                <a href="{{ url_for('submit_tweet', token=twitter_account.submission_token.token) }}">http://fatnest.com{{ url_for('submit_tweet', token=twitter_account.submission_token.token) }}</a> <form id="anon-moderated-form"><label for="moderate-anonymous"><input data-twitter-id="{{ twitter_account.id }}" name="moderate-anonymous" id="moderate-anonymous" type="checkbox" {% if twitter_account.anonymous_moderated %}checked{% endif %} /> Moderate Anonymous submissions?</label><br />
+                    <small>This means anyone with the link can tweet using this Twitter account.</small></form>
+	  </div>
+		
+		{% if twitter_account.moderation_needed %}
+		<div id="moderation-queue">
+            <h2>Moderation Queue:</h2>
+				{% for tweet in twitter_account.moderation_queue %}
+						<div class="moderated-tweet">
+                            From <strong>{% if not tweet.user_id and tweet.author.email is not defined %}Anonymous{% else %}{{ tweet.author.email }}{% endif %}</strong>: {{ tweet.tweet }}
+                            <button data-tweet="{{ tweet.id }}" class="reject-tweet">Reject</button>
+                            <button data-tweet="{{ tweet.id }}" class="approve-tweet">Approve</button>
+						</div>
+				{% endfor %}
+		</div>
+		{% endif %}
+
+		<div class="delegate-section" data-twitter="{{ twitter_account.id }}">
+            <h2>Delegate Access</h2>
+				<form class="twitter-delegate-form">
+						 <div class="input-row">
+								 <div class="input"><label for="email">Email Address</label></div>
+								 <div class="input"><input name="email" id="delegate-email" /></div>
+						 </div>
+						 
+						 <div class="input-row">
+								 <div class="input">&nbsp;</div>
+								 <div class="input"><button id="delegate-submit">Delegate</button></div>
+						 </div>
+				 </form>
+		 </div>
+
+
+{% endblock %}

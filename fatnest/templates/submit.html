@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block contentclass %}narrower{% endblock %}
+{% block content %}
+    <form id="tweet-form">
+        <fieldset>
+            <h2>Submit a tweet for <a class="twitter-link" href="http://twitter.com/{{ twitter_account.username }}">@{{ twitter_account.username }}</a></h2>
+            <input id="twitter-account" type="hidden" name="twitter_account_id" value="{{ twitter_account.id }}" />
+            <input id="submission-token" type="hidden" name="submission-token" value="{{ submission_token }}" />
+						<textarea placeholder="Enter your tweet here." name="tweet" id="tweet"></textarea>
+						<div id="tweet-length">140</div>
+						<button id="send-tweet" class="left-tweet">Tweet</button>
+        </fieldset>
+    </form>
+{% endblock %}

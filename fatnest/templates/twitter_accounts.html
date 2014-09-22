@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if session.user is defined %}
+
+        <h2 class="twitter-accounts">Twitter Accounts <a class="button-link add-twitter-account" href="{{ url_for('auth_twitter_account') }}">Add Twitter Account</a></h2>
+
+        <ul class="twitter-account-list">
+            {% for twitter_account in session.user.twitter_accounts %}
+            <li class="twitter-row" data-twitter="{{ twitter_account.id }}">
+                <p>
+                    <a id="twitter-username-link" href="http://twitter.com/{{ twitter_account.username }}">@{{ twitter_account.username }}</a>
+                    <a href="{{ url_for('twitter_account', id=twitter_account.id) }}" class="button-link">Settings/Moderate</a>
+                    <a href="#" class="button-link delete-twitter" data-twitter="{{ twitter_account.id }}">Delete</a>
+                </p>
+            </li>
+            {% endfor %}
+        </ul>
+{% endif %}
+{% endblock %}

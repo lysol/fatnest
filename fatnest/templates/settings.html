@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Change Password{% endblock %}
+
+{% block content %}
+<h1>Settings</h1>
+<div class="forms-container">   
+		<h2>Change your password</h2>
+
+    <form action="{{ url_for('change_password') }}" method="POST">
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <div class="input-row">
+            <div class="input"><label for="current-password">Current Password</label></div>
+            <div class="input"><input name="current-password" type="password" /></div>
+        </div>
+
+        <div id ="password-row" class="input-row">
+            <div class="input"><label for="password">New Password</label></div>
+            <div class="input"><input name="password" type="password" /></div>
+        </div>
+
+        <div class="input-row">
+            <div class="input">&nbsp;</div>
+            <div class="input"><button id="change-button">Change Password</button></div>
+        </div>
+
+    </form>
+
+</div>
+{% endblock %}
